@@ -1,35 +1,60 @@
-[ program -1  wap to calculate numbers](# assi-1)
+[ program -1  wap to calculate numbers using class and objects](# assi-1)
 
 [ program -2  wap to add strings](# assi-2)
 ## assi-1
 ```
-public class Calculator {
-  public static void main(String[] args)
-  int a = Integer.parseInt(args[0]);
-  int b = Integer.parseInt(args[1]);
-  add(a,b);
-  sub(a,b);
-  mul(a,b);
-  div(a,b);
+import java.util.Scanner;
+
+class Calculator {
+    int a, b;
+
+    void getValues(int x, int y) {
+        a = x;
+        b = y;
+    }
+
+    void add() {
+        System.out.println("Addition = " + (a + b));
+    }
+
+    void sub() {
+        System.out.println("Subtraction = " + (a - b));
+    }
+
+    void mul() {
+        System.out.println("Multiplication = " + (a * b));
+    }
+
+    void div() {
+        if (b != 0) {
+            System.out.println("Division = " + (a / b));
+        } else {
+            System.out.println("Division by zero not allowed");
+        }
+    }
 }
-//addition
-public static void add(int a ,int b){
-  System.out.println("Addition :" + (a+b));
-}
-//subtraction
-public static void sub(int a ,int b){
-  System.out.println("Subtraction :" + (a-b));
-}
-//multiplication
-public static void mul(int a ,int b){
-  System.out.println("Multiplication :" + (a*b));
-}
-//division
-public static void div(int a ,int b){
-  System.out.println("Division :" + (a/b));
+
+public class calculator2 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter first number: ");
+        int x = sc.nextInt();
+
+        System.out.print("Enter second number: ");
+        int y = sc.nextInt();
+
+        Calculator obj = new Calculator();
+        obj.getValues(x, y);
+
+        obj.add();
+        obj.sub();
+        obj.mul();
+        obj.div();
+    }
 }
 ```
-<img width="1280" height="1024" alt="image" src="https://github.com/user-attachments/assets/633ebcd8-0dec-499f-a5cf-d94b60283701" />
+<img width="743" height="175" alt="image" src="https://github.com/user-attachments/assets/f0860a82-473a-46ff-9681-3db83780024d" />
 
 
 ## assi-2
