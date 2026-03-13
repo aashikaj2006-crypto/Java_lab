@@ -1,6 +1,6 @@
 [ program -1  wap to calculate numbers using class and objects](# assi-1)
 
-[ program -2  wap to add strings](# assi-2)
+[ program -2  wap to add two distance in m,mm,cm](# assi-2)
 ## assi-1
 ```
 import java.util.Scanner;
@@ -59,13 +59,58 @@ public class calculator2 {
 
 ## assi-2
 ```
-class ayu{
-public static void main(String[] args){
-System.out.println(args[0]);
-String s=args[0]+args[1];
-System.out.println(s);
+import java.util.Scanner;
+
+class Distance {
+    int m, cm, mm;
+
+    void input() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter meters: ");
+        m = sc.nextInt();
+        System.out.print("Enter centimeters: ");
+        cm = sc.nextInt();
+        System.out.print("Enter millimeters: ");
+        mm = sc.nextInt();
+    }
+
+    Distance add(Distance d) {
+        Distance temp = new Distance();
+
+        temp.mm = mm + d.mm;
+        temp.cm = cm + d.cm + (temp.mm / 10);
+        temp.mm = temp.mm % 10;
+
+        temp.m = m + d.m + (temp.cm / 100);
+        temp.cm = temp.cm % 100;
+
+        return temp;
+    }
+
+    void display() {
+        System.out.println(m + " m " + cm + " cm " + mm + " mm");
+    }
 }
+
+public class Distance1 {
+    public static void main(String[] args) {
+        Distance d1 = new Distance();
+        Distance d2 = new Distance();
+        Distance result;
+
+        System.out.println("Enter first distance:");
+        d1.input();
+
+        System.out.println("Enter second distance:");
+        d2.input();
+
+        result = d1.add(d2);
+
+        System.out.print("Total Distance = ");
+        result.display();
+    }
 }
 ```
-<img width="733" height="866" alt="image" src="https://github.com/user-attachments/assets/6b6b9441-1869-42bf-bdc8-81872e6b925f" />
+<img width="747" height="210" alt="image" src="https://github.com/user-attachments/assets/9eb93131-ec0e-4443-aaaa-782bfbbcdd31" />
+
 
