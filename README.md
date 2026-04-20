@@ -160,7 +160,7 @@ class TimeHMS {
         result.display();
     }
 }
-
+```
 <img width="377" height="26" alt="image" src="https://github.com/user-attachments/assets/7d241270-7318-463f-911f-26c0b39dffce" />
 
 
@@ -195,14 +195,13 @@ class TimeHM {
         result.display();
     }
 }
-
+```
 <img width="394" height="23" alt="image" src="https://github.com/user-attachments/assets/9f21ce7c-20ca-4c50-ae76-bb8790a6e569" />
 
 
 ##assi-5
 ```
 FACTORIAL
-
 class Factorial {
     public static void main(String[] args) {
         int n = 5, fact = 1;
@@ -213,11 +212,10 @@ class Factorial {
         System.out.println("Factorial = " + fact);
     }
 }
+```
 <img width="367" height="17" alt="image" src="https://github.com/user-attachments/assets/0183eaf8-7cd9-45e1-a187-38e3d664409d" />
 
-```
 ARMSTRONG
-
 class Armstrong {
     public static void main(String[] args) {
         int n = 153, temp = n, sum = 0;
@@ -237,9 +235,7 @@ class Armstrong {
 
 <img width="381" height="17" alt="image" src="https://github.com/user-attachments/assets/e15fc7d7-2b1c-4e70-bb08-412bdc8c0a61" />
 
-```
 PALINDROME
-
 class Palindrome {
     public static void main(String[] args) {
         int n = 121, temp = n, rev = 0;
@@ -259,9 +255,7 @@ class Palindrome {
 
 <img width="377" height="19" alt="image" src="https://github.com/user-attachments/assets/fbde58a4-5737-4d1a-b150-8b66aca7a4a8" />
 
-```
 FIBONACCI
-
 class Fibonacci {
     public static void main(String[] args) {
         int n = 5, a = 0, b = 1;
@@ -277,9 +271,7 @@ class Fibonacci {
 
 <img width="408" height="16" alt="image" src="https://github.com/user-attachments/assets/0876f995-a558-41e9-823b-9e67b54605e7" />
 
-```
 PATTERN
-
 class Pattern {
     public static void main(String[] args) {
         for (int i = 1; i <= 5; i++) {
@@ -333,7 +325,7 @@ class Array1D {
         obj.reverse();
     }
 }
-
+```
 <img width="377" height="44" alt="image" src="https://github.com/user-attachments/assets/f14e33ce-991c-4dad-8706-4097d3faea84" />
 
 
@@ -405,6 +397,6 @@ class Matrix {
         obj.diagonalSum();
     }
 }
-
+```
 <img width="398" height="283" alt="image" src="https://github.com/user-attachments/assets/99d08a5c-55d0-43eb-a96d-ecf78d6e78d6" />
 
