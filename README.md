@@ -2,7 +2,17 @@
 
 [ program -2  wap to add two distance in m,mm,cm](# assi-2)
 
-[
+[[ program -3  wap to add two time in hh,mm,ss](# assi-3)
+
+[ program -4  wap to add two time in hh,mm ](# assi-4)
+
+[ program -5  wap of any 5 prog of C lang ](# assi-5)
+
+[ program -6  wap of class having 4 methods for 1-D Array](# assi-6)
+
+[ program -7  wap of class with multiple methods to perform matrix operations](# assi-7)
+
+
 ## assi-1
 ```
 import java.util.Scanner;
@@ -115,6 +125,7 @@ public class Distance1 {
 ```
 <img width="747" height="210" alt="image" src="https://github.com/user-attachments/assets/9eb93131-ec0e-4443-aaaa-782bfbbcdd31" />
 
+
 ## assi-3
 ```
 class TimeHMS {
@@ -152,6 +163,7 @@ class TimeHMS {
 
 <img width="377" height="26" alt="image" src="https://github.com/user-attachments/assets/7d241270-7318-463f-911f-26c0b39dffce" />
 
+
 ##assi-4
 ```
 class TimeHM {
@@ -186,6 +198,7 @@ class TimeHM {
 
 <img width="394" height="23" alt="image" src="https://github.com/user-attachments/assets/9f21ce7c-20ca-4c50-ae76-bb8790a6e569" />
 
+
 ##assi-5
 ```
 FACTORIAL
@@ -202,6 +215,7 @@ class Factorial {
 }
 <img width="367" height="17" alt="image" src="https://github.com/user-attachments/assets/0183eaf8-7cd9-45e1-a187-38e3d664409d" />
 
+```
 ARMSTRONG
 
 class Armstrong {
@@ -223,6 +237,7 @@ class Armstrong {
 
 <img width="381" height="17" alt="image" src="https://github.com/user-attachments/assets/e15fc7d7-2b1c-4e70-bb08-412bdc8c0a61" />
 
+```
 PALINDROME
 
 class Palindrome {
@@ -244,6 +259,7 @@ class Palindrome {
 
 <img width="377" height="19" alt="image" src="https://github.com/user-attachments/assets/fbde58a4-5737-4d1a-b150-8b66aca7a4a8" />
 
+```
 FIBONACCI
 
 class Fibonacci {
@@ -261,6 +277,7 @@ class Fibonacci {
 
 <img width="408" height="16" alt="image" src="https://github.com/user-attachments/assets/0876f995-a558-41e9-823b-9e67b54605e7" />
 
+```
 PATTERN
 
 class Pattern {
@@ -275,6 +292,7 @@ class Pattern {
 }
 
 <img width="426" height="71" alt="image" src="https://github.com/user-attachments/assets/21eadd8e-216e-4159-8e7b-bea733314861" />
+
 
 ## assi-6
 ```
@@ -317,6 +335,7 @@ class Array1D {
 }
 
 <img width="377" height="44" alt="image" src="https://github.com/user-attachments/assets/f14e33ce-991c-4dad-8706-4097d3faea84" />
+
 
 ## assi-7
 ```
