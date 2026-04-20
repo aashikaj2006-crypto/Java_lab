@@ -545,4 +545,27 @@ class ExceptionDemo {
 }
 ```
 <img width="386" height="35" alt="image" src="https://github.com/user-attachments/assets/2347d14d-2e9a-4371-877f-aceb14642e9c" />
+class AgeException extends Exception {
+    AgeException(String msg) {
+        super(msg);
+    }
+}
+
+class TestAge {
+    static void checkAge(int age) throws AgeException {
+        if (age < 18)
+            throw new AgeException("Not eligible");
+        else
+            System.out.println("Eligible");
+    }
+
+    public static void main(String[] args) {
+        try {
+            checkAge(16);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+}
+<img width="414" height="25" alt="image" src="https://github.com/user-attachments/assets/ef59149a-2e2c-4195-80d9-db4399351e35" />
 
