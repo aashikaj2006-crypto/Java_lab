@@ -26,7 +26,19 @@
 
 [ program -14  wap of inheritance using interface and abstract classes](#assi-14)
 
-[ program -15  wap of file handling](# assi-15)
+[ program -15  wap of addition of two no using java swing](#assi-15)
+
+[ program -16  wap of calculator in swing](#assi-16)
+
+[ program -17  wap of matrix addition using swing class](#assi-17)
+
+[ program -18  wap to create jframe apply 10 buttons on that after clicking on each button a new structure is created](#assi-18)
+
+[ program -19  wap to create a jframe like paint brush with selection of color and width using only mouse](#assi-19)
+
+[ program -20  wap to make registration form using 10 elements and send data into database](#assi-20)
+
+[ program -21  wap of file handling](#assi-21)
 
 ## assi-1
 ```
@@ -488,8 +500,7 @@ class JoinExample extends Thread {
     }
 }
 ```
-<img width="397" height="134" alt="image" src="https://github.com/user-attachments/assets/a17a2dd2-0a2a-4849-945e-bca5604f1216" />
-
+<img width="397" height="182" alt="image" src="https://github.com/user-attachments/assets/88bac8fb-2ea3-42e8-b576-c070152f5487" />
 
 ## assi-10
 ```
@@ -625,3 +636,357 @@ class Test {
 
 ## assi-15
 ```
+import javax.swing.*;
+import java.awt.event.*;
+
+public class AddSwing {
+    public static void main(String[] args) {
+        JFrame f = new JFrame("Addition");
+
+        JTextField t1 = new JTextField();
+        JTextField t2 = new JTextField();
+        JTextField t3 = new JTextField();
+
+        JButton b = new JButton("Add");
+
+        t1.setBounds(50, 50, 150, 30);
+        t2.setBounds(50, 100, 150, 30);
+        t3.setBounds(50, 150, 150, 30);
+        b.setBounds(50, 200, 150, 30);
+
+        f.add(t1);
+        f.add(t2);
+        f.add(t3);
+        f.add(b);
+
+        b.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    int a = Integer.parseInt(t1.getText());
+                    int b = Integer.parseInt(t2.getText());
+                    int c = a + b;
+                    t3.setText(String.valueOf(c));
+                } catch (Exception ex) {
+                    JOptionPane.showMessageDialog(f, "Enter valid numbers!");
+                }
+            }
+        });
+
+        f.setSize(300, 300);
+        f.setLayout(null);
+        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        f.setVisible(true);
+    }
+}
+```
+<img width="482" height="362" alt="image" src="https://github.com/user-attachments/assets/c45d7849-d8ef-49e6-8b22-e4d4d47abfd7" />
+
+## assi-16
+```
+import javax.swing.*;
+import java.awt.event.*;
+
+public class CalculatorSwing implements ActionListener {
+    JFrame f;
+    JTextField t;
+    int num1, num2, result;
+    char op;
+
+    CalculatorSwing() {
+        f = new JFrame("Calculator");
+        t = new JTextField();
+
+        JButton b1 = new JButton("1");
+        JButton b2 = new JButton("2");
+        JButton add = new JButton("+");
+        JButton sub = new JButton("-");
+        JButton mul = new JButton("*");
+        JButton div = new JButton("/");
+        JButton eq = new JButton("=");
+
+        t.setBounds(50, 50, 220, 30);
+        b1.setBounds(50, 100, 50, 50);
+        b2.setBounds(110, 100, 50, 50);
+        add.setBounds(170, 100, 50, 50);
+        sub.setBounds(230, 100, 50, 50);
+        mul.setBounds(50, 160, 50, 50);
+        div.setBounds(110, 160, 50, 50);
+        eq.setBounds(170, 160, 110, 50);
+
+        f.add(t); f.add(b1); f.add(b2);
+        f.add(add); f.add(sub); f.add(mul); f.add(div); f.add(eq);
+
+        b1.addActionListener(this);
+        b2.addActionListener(this);
+        add.addActionListener(this);
+        sub.addActionListener(this);
+        mul.addActionListener(this);
+        div.addActionListener(this);
+        eq.addActionListener(this);
+
+        f.setSize(350, 300);
+        f.setLayout(null);
+        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        f.setVisible(true);
+    }
+
+    public void actionPerformed(ActionEvent e) {
+        String s = e.getActionCommand();
+
+        if (s.matches("[0-9]")) {
+            t.setText(t.getText() + s);
+        } else if (s.matches("[+\\-*/]")) {
+            num1 = Integer.parseInt(t.getText());
+            op = s.charAt(0);
+            t.setText("");
+        } else if (s.equals("=")) {
+            num2 = Integer.parseInt(t.getText());
+
+            switch (op) {
+                case '+': result = num1 + num2; break;
+                case '-': result = num1 - num2; break;
+                case '*': result = num1 * num2; break;
+                case '/': result = num1 / num2; break;
+            }
+            t.setText(String.valueOf(result));
+        }
+    }
+
+    public static void main(String[] args) {
+        new CalculatorSwing();
+    }
+}
+```
+<img width="470" height="357" alt="image" src="https://github.com/user-attachments/assets/6f877c65-e8f8-47a3-a60d-900c6cae8c6e" />
+<img width="470" height="342" alt="image" src="https://github.com/user-attachments/assets/8feb3851-aa4b-413b-9f56-837656e9e952" />
+<img width="478" height="361" alt="image" src="https://github.com/user-attachments/assets/66657996-830b-4345-8ab5-41c4a927d644" />
+<img width="470" height="365" alt="image" src="https://github.com/user-attachments/assets/f14a8e1d-7b2d-4672-8931-bcbec35d021d" />
+
+
+## assi-17
+```
+import javax.swing.*;
+
+public class MatrixAddSwing {
+    public static void main(String[] args) {
+        JFrame f = new JFrame("Matrix Addition");
+
+        JTextField[][] a = new JTextField[2][2];
+        JTextField[][] b = new JTextField[2][2];
+        JTextField[][] c = new JTextField[2][2];
+
+        JButton btn = new JButton("Add");
+
+        int x = 50, y = 50;
+
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 2; j++) {
+                a[i][j] = new JTextField();
+                b[i][j] = new JTextField();
+                c[i][j] = new JTextField();
+
+                a[i][j].setBounds(x + j * 40, y + i * 40, 40, 30);
+                b[i][j].setBounds(x + 120 + j * 40, y + i * 40, 40, 30);
+                c[i][j].setBounds(x + 240 + j * 40, y + i * 40, 40, 30);
+
+                f.add(a[i][j]);
+                f.add(b[i][j]);
+                f.add(c[i][j]);
+            }
+        }
+
+        btn.setBounds(120, 150, 80, 30);
+
+        btn.addActionListener(e -> {
+            try {
+                for (int i = 0; i < 2; i++) {
+                    for (int j = 0; j < 2; j++) {
+                        int val = Integer.parseInt(a[i][j].getText()) +
+                                  Integer.parseInt(b[i][j].getText());
+                        c[i][j].setText(String.valueOf(val));
+                    }
+                }
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(f, "Invalid Input!");
+            }
+        });
+
+        f.add(btn);
+        f.setSize(400, 300);
+        f.setLayout(null);
+        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        f.setVisible(true);
+    }
+}
+```
+<img width="615" height="350" alt="image" src="https://github.com/user-attachments/assets/9c04e683-6470-4785-83ce-5810db2b04c1" />
+
+## assi-18
+```
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class ShapesFrame extends JFrame implements ActionListener {
+    String shape = "";
+
+    ShapesFrame() {
+        setLayout(new FlowLayout());
+
+        String[] shapes = {"Circle","Oval","Rectangle","Square","Line","Arc","RoundRect","Ellipse","Triangle","Point"};
+
+        for (String s : shapes) {
+            JButton b = new JButton(s);
+            b.addActionListener(this);
+            add(b);
+        }
+
+        setSize(500, 500);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setVisible(true);
+    }
+
+    public void actionPerformed(ActionEvent e) {
+        shape = e.getActionCommand();
+        repaint();
+    }
+
+    public void paint(Graphics g) {
+        super.paint(g);
+
+        if (shape.equals("Circle")) g.drawOval(200, 200, 100, 100);
+        if (shape.equals("Rectangle")) g.drawRect(200, 200, 120, 60);
+        if (shape.equals("Line")) g.drawLine(100, 100, 300, 300);
+        if (shape.equals("Oval")) g.drawOval(200, 200, 120, 80);
+    }
+
+    public static void main(String[] args) {
+        new ShapesFrame();
+    }
+}
+
+```
+<img width="551" height="361" alt="image" src="https://github.com/user-attachments/assets/0518a197-0201-44d8-8e32-c46694f1bd93" />
+<img width="556" height="369" alt="image" src="https://github.com/user-attachments/assets/a083e80b-a5db-48bc-a6f8-23f07e3a758d" />
+<img width="559" height="354" alt="image" src="https://github.com/user-attachments/assets/a7f10082-cdfe-472a-8223-9c9da5cc0cc8" />
+<img width="550" height="356" alt="image" src="https://github.com/user-attachments/assets/e9cb3524-4eb7-4ddd-af1f-3189ac54377a" />
+<img width="593" height="388" alt="image" src="https://github.com/user-attachments/assets/e0ebf6dc-ae63-4c9f-b251-3ab14596dccc" />
+<img width="588" height="388" alt="image" src="https://github.com/user-attachments/assets/77d06bc3-0443-40a2-9581-e5d5de78a7ac" />
+<img width="593" height="385" alt="image" src="https://github.com/user-attachments/assets/9060d2ff-5242-486a-b80d-528dceb6cbaa" />
+<img width="595" height="395" alt="image" src="https://github.com/user-attachments/assets/c7b63bb5-1d95-44b4-8156-0a3bdfac850c" />
+<img width="589" height="389" alt="image" src="https://github.com/user-attachments/assets/1d175dbe-6a6f-40da-8f13-24ba9d9c87f8" />
+<img width="431" height="286" alt="image" src="https://github.com/user-attachments/assets/065c6ae6-399e-4fa4-8e2b-0cad42ecc8cd" />
+
+
+## assi-19
+```
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class PaintApp extends JFrame {
+    Color currentColor = Color.BLACK;
+    int size = 5;
+
+    PaintApp() {
+        addMouseMotionListener(new MouseMotionAdapter() {
+            public void mouseDragged(MouseEvent e) {
+                Graphics g = getGraphics();
+                g.setColor(currentColor);
+                g.fillOval(e.getX(), e.getY(), size, size);
+            }
+        });
+
+        JButton red = new JButton("Red");
+        JButton blue = new JButton("Blue");
+        JButton big = new JButton("Big");
+
+        red.setBounds(10, 10, 80, 30);
+        blue.setBounds(100, 10, 80, 30);
+        big.setBounds(190, 10, 80, 30);
+
+        red.addActionListener(e -> currentColor = Color.RED);
+        blue.addActionListener(e -> currentColor = Color.BLUE);
+        big.addActionListener(e -> size = 15);
+
+        setLayout(null);
+        add(red); add(blue); add(big);
+
+        setSize(500, 500);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setVisible(true);
+    }
+
+    public static void main(String[] args) {
+        new PaintApp();
+    }
+}
+```
+<img width="556" height="365" alt="image" src="https://github.com/user-attachments/assets/1eccd2ec-8660-4e1c-a180-17e7d7d03618" />
+
+## assi-20
+```
+import javax.swing.*;
+import java.awt.event.*;
+import java.sql.*;
+
+public class RegisterForm {
+    public static void main(String[] args) {
+        JFrame f = new JFrame("Registration Form");
+
+        JTextField name = new JTextField();
+        JTextField email = new JTextField();
+        JTextField phone = new JTextField();
+
+        JButton submit = new JButton("Submit");
+
+        name.setBounds(50, 50, 200, 30);
+        email.setBounds(50, 100, 200, 30);
+        phone.setBounds(50, 150, 200, 30);
+        submit.setBounds(50, 200, 100, 30);
+
+        f.add(name);
+        f.add(email);
+        f.add(phone);
+        f.add(submit);
+
+        submit.addActionListener(e -> {
+            try {
+                Connection con = DriverManager.getConnection(
+                        "jdbc:mysql://localhost:3306/test", "root", "root");
+
+                PreparedStatement ps = con.prepareStatement(
+                        "INSERT INTO users(name,email,phone) VALUES(?,?,?)");
+
+                ps.setString(1, name.getText());
+                ps.setString(2, email.getText());
+                ps.setString(3, phone.getText());
+
+                ps.executeUpdate();
+
+                JOptionPane.showMessageDialog(f, "Data Saved Successfully");
+
+                con.close();
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(f, ex.toString());
+            }
+        });
+
+        f.setSize(350, 300);
+        f.setLayout(null);
+        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        f.setVisible(true);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
