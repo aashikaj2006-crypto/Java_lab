@@ -38,7 +38,9 @@
 
 [ program -20  wap to make registration form using 10 elements and send data into database](#assi-20)
 
-[ program -21  wap of file handling](#assi-21)
+[ program -21  wap of file handling(char by char)](#assi-21)
+
+[ program -22  wap of file handling (byte by byte)](#assi-22)
 
 ## assi-1
 ```
@@ -1024,10 +1026,68 @@ public class RegistrationForm extends JFrame {
 <img width="218" height="329" alt="image" src="https://github.com/user-attachments/assets/e71c2e46-a511-4509-babe-5dc33cae5c09" />
 
 
-## assi-21
+## assi-21(CHAR BY CHAR)
 ```
+import java.io.*;
 
+public class CharFileCopy {
+    public static void main(String[] args) {
+        try {
+            FileReader fr = new FileReader("source.txt");
+            FileWriter fw = new FileWriter("dest_char.txt");
 
+            int ch;
+
+            while ((ch = fr.read()) != -1) {
+                fw.write(ch);
+            }
+
+            fr.close();
+            fw.close();
+
+            System.out.println("File copied using character stream");
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+}
+```
+input
+<img width="494" height="29" alt="image" src="https://github.com/user-attachments/assets/cae1dc5d-d0a3-4a51-a6a2-2d901c009529" />
+output
+<img width="498" height="17" alt="image" src="https://github.com/user-attachments/assets/8e30329c-69bd-4319-b23c-4328e7dd3729" />
+
+## assi-22(BYTE BY BYTE)
+```
+import java.io.*;
+
+public class ByteFileCopy {
+    public static void main(String[] args) {
+        try {
+            FileInputStream fis = new FileInputStream("source.txt");
+            FileOutputStream fos = new FileOutputStream("dest_byte.txt");
+
+            int b;
+
+            while ((b = fis.read()) != -1) {
+                fos.write(b);
+            }
+
+            fis.close();
+            fos.close();
+
+            System.out.println("File copied using byte stream");
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+}
+```
+input
+<img width="484" height="31" alt="image" src="https://github.com/user-attachments/assets/4857eb26-627e-4952-ae53-f43528c865bf" />
+
+output
+<img width="512" height="20" alt="image" src="https://github.com/user-attachments/assets/9648d48b-2993-4835-bb6a-5d876720b316" />
 
 
 
