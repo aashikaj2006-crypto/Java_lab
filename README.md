@@ -1,17 +1,32 @@
-[ program -1  wap to calculate numbers using class and objects](# assi-1)
+[ program -1  wap to calculate numbers using class and objects](#assi-1)
 
-[ program -2  wap to add two distance in m,mm,cm](# assi-2)
+[ program -2  wap to add two distance in m,mm,cm](#assi-2)
 
-[ program -3  wap to add two time in hh,mm,ss](# assi-3)
+[ program -3  wap to add two time in hh,mm,ss](#assi-3)
 
-[ program -4  wap to add two time in hh,mm ](# assi-4)
+[ program -4  wap to add two time in hh,mm ](#assi-4)
 
-[ program -5  wap of any 5 prog of C lang ](# assi-5)
+[ program -5  wap of any 5 prog of C lang ](#assi-5)
 
-[ program -6  wap of class having 4 methods for 1-D Array](# assi-6)
+[ program -6  wap of class having 4 methods for 1-D Array](#assi-6)
 
-[ program -7  wap of class with multiple methods to perform matrix operations](# assi-7)
+[ program -7  wap of class with multiple methods to perform matrix operations](#assi-7)
 
+[ program -8  wap using 3  class to print 1-100 with and without thread](#assi-8)
+
+[ program -9  wap to synchronized all three outputs of threads using multithreading](#assi-9)
+
+[ program -10  wap to create package of any 5 classes and import it ](#assi-10)
+
+[ program -11  wap to create package and subpackage and import and test it](#assi-11)
+
+[ program -12  wap to apply arrayoutofboundexception and arithmatic exception](#assi-12)
+
+[ program -13  wap to test range of age using user defined exception](#assi-13)
+
+[ program -14  wap of inheritance using interface and abstract classes](#assi-14)
+
+[ program -15  wap of file handling](# assi-15)
 
 ## assi-1
 ```
@@ -545,6 +560,10 @@ class ExceptionDemo {
 }
 ```
 <img width="386" height="35" alt="image" src="https://github.com/user-attachments/assets/2347d14d-2e9a-4371-877f-aceb14642e9c" />
+
+
+## assi-13
+```
 class AgeException extends Exception {
     AgeException(String msg) {
         super(msg);
@@ -567,5 +586,40 @@ class TestAge {
         }
     }
 }
+```
 <img width="414" height="25" alt="image" src="https://github.com/user-attachments/assets/ef59149a-2e2c-4195-80d9-db4399351e35" />
 
+## assi-14
+```
+abstract class Animal {
+    abstract void sound();
+}
+
+interface Pet {
+    void play();
+}
+
+class Dog extends Animal implements Pet {
+    void sound() {
+        System.out.println("Bark");
+    }
+
+    public void play() {
+        System.out.println("Dog is playing");
+    }
+}
+
+class Test {
+    public static void main(String[] args) {
+        Dog d = new Dog();
+        d.sound();
+        d.play();
+    }
+}
+```
+
+<img width="424" height="31" alt="image" src="https://github.com/user-attachments/assets/a9c9df58-d178-4e59-a5bb-545ffd38e588" />
+
+
+## assi-15
+```
