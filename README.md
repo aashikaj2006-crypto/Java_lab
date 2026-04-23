@@ -453,6 +453,8 @@ class MyThread extends Thread {
     }
 }
 
+<img width="397" height="182" alt="image" src="https://github.com/user-attachments/assets/88bac8fb-2ea3-42e8-b576-c070152f5487" />
+
 <img width="394" height="92" alt="image" src="https://github.com/user-attachments/assets/72e55d23-d78f-42d5-abae-b3648408aee2" />
 
 
@@ -559,8 +561,7 @@ class ExceptionDemo {
     }
 }
 ```
-<img width="386" height="35" alt="image" src="https://github.com/user-attachments/assets/2347d14d-2e9a-4371-877f-aceb14642e9c" />
-
+<img width="451" height="69" alt="image" src="https://github.com/user-attachments/assets/167d1c3d-9734-4bed-bc5e-02d365972825" />
 
 ## assi-13
 ```
@@ -573,7 +574,7 @@ class AgeException extends Exception {
 class TestAge {
     static void checkAge(int age) throws AgeException {
         if (age < 18)
-            throw new AgeException("Not eligible");
+            throw new AgeException("age is not in valid range (18-25)");
         else
             System.out.println("Eligible");
     }
@@ -587,7 +588,8 @@ class TestAge {
     }
 }
 ```
-<img width="414" height="25" alt="image" src="https://github.com/user-attachments/assets/ef59149a-2e2c-4195-80d9-db4399351e35" />
+
+<img width="482" height="81" alt="image" src="https://github.com/user-attachments/assets/6f649f1b-d666-4921-af53-0ecd96c3f4dd" />
 
 ## assi-14
 ```
