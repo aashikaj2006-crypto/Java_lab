@@ -465,8 +465,6 @@ class MyThread extends Thread {
     }
 }
 
-<img width="397" height="182" alt="image" src="https://github.com/user-attachments/assets/88bac8fb-2ea3-42e8-b576-c070152f5487" />
-
 <img width="394" height="92" alt="image" src="https://github.com/user-attachments/assets/72e55d23-d78f-42d5-abae-b3648408aee2" />
 
 
@@ -927,57 +925,107 @@ public class PaintApp extends JFrame {
 ## assi-20
 ```
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.*;
-import java.sql.*;
 
-public class RegisterForm {
-    public static void main(String[] args) {
-        JFrame f = new JFrame("Registration Form");
+public class RegistrationForm extends JFrame {
 
-        JTextField name = new JTextField();
-        JTextField email = new JTextField();
-        JTextField phone = new JTextField();
+    JTextField nameField, ageField, cityField, emailField, phoneField, countryField;
+    JPasswordField passwordField;
+    JComboBox<String> courseBox;
+    JRadioButton male, female;
+    JButton submit;
 
-        JButton submit = new JButton("Submit");
+    public RegistrationForm() {
+        setTitle("Registration Form");
+        setSize(400, 500);
+        setLayout(new GridLayout(10, 2, 10, 10));
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        name.setBounds(50, 50, 200, 30);
-        email.setBounds(50, 100, 200, 30);
-        phone.setBounds(50, 150, 200, 30);
-        submit.setBounds(50, 200, 100, 30);
+        // Components
+        nameField = new JTextField();
+        ageField = new JTextField();
+        passwordField = new JPasswordField();
+        cityField = new JTextField();
+        emailField = new JTextField();
+        phoneField = new JTextField();
+        countryField = new JTextField();
 
-        f.add(name);
-        f.add(email);
-        f.add(phone);
-        f.add(submit);
+        String[] courses = {"BTech", "BCA", "MCA"};
+        courseBox = new JComboBox<>(courses);
 
-        submit.addActionListener(e -> {
-            try {
-                Connection con = DriverManager.getConnection(
-                        "jdbc:mysql://localhost:3306/test", "root", "root");
+        male = new JRadioButton("Male");
+        female = new JRadioButton("Female");
 
-                PreparedStatement ps = con.prepareStatement(
-                        "INSERT INTO users(name,email,phone) VALUES(?,?,?)");
+        ButtonGroup bg = new ButtonGroup();
+        bg.add(male);
+        bg.add(female);
 
-                ps.setString(1, name.getText());
-                ps.setString(2, email.getText());
-                ps.setString(3, phone.getText());
+        submit = new JButton("Submit");
 
-                ps.executeUpdate();
+        // Adding Components
+        add(new JLabel("Name:")); add(nameField);
+        add(new JLabel("Age:")); add(ageField);
+        add(new JLabel("Password:")); add(passwordField);
+        add(new JLabel("City:")); add(cityField);
+        add(new JLabel("Email ID:")); add(emailField);
+        add(new JLabel("Phone No:")); add(phoneField);
+        add(new JLabel("Country:")); add(countryField);
+        add(new JLabel("Course:")); add(courseBox);
 
-                JOptionPane.showMessageDialog(f, "Data Saved Successfully");
+        add(new JLabel("Gender:"));
+        JPanel genderPanel = new JPanel();
+        genderPanel.add(male);
+        genderPanel.add(female);
+        add(genderPanel);
 
-                con.close();
-            } catch (Exception ex) {
-                JOptionPane.showMessageDialog(f, ex.toString());
+        add(new JLabel("")); // empty space
+        add(submit);
+
+        // Button Action
+        submit.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                String name = nameField.getText();
+                String age = ageField.getText();
+                String password = new String(passwordField.getPassword());
+                String city = cityField.getText();
+                String email = emailField.getText();
+                String phone = phoneField.getText();
+                String country = countryField.getText();
+                String course = (String) courseBox.getSelectedItem();
+
+                String gender = "";
+                if (male.isSelected()) gender = "Male";
+                else if (female.isSelected()) gender = "Female";
+
+                JOptionPane.showMessageDialog(null,
+                        "Name: " + name +
+                        "\nAge: " + age +
+                        "\nPassword: " + password +
+                        "\nCity: " + city +
+                        "\nEmail: " + email +
+                        "\nPhone: " + phone +
+                        "\nCountry: " + country +
+                        "\nCourse: " + course +
+                        "\nGender: " + gender
+                );
             }
         });
 
-        f.setSize(350, 300);
-        f.setLayout(null);
-        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        f.setVisible(true);
+        setVisible(true);
+    }
+
+    public static void main(String[] args) {
+        new RegistrationForm();
     }
 }
+        
+```
+<img width="218" height="329" alt="image" src="https://github.com/user-attachments/assets/e71c2e46-a511-4509-babe-5dc33cae5c09" />
+
+
+## assi-21
+```
 
 
 
