@@ -1,46 +1,56 @@
 [ program -1  wap to calculate numbers using class and objects](#assi-1)
 
-[ program -2  wap to add two distance in m,mm,cm](#assi-2)
+[ program -2  wap to check prime numbers](#assi-2)
 
-[ program -3  wap to add two time in hh,mm,ss](#assi-3)
+[ program -3  wap to reverse  a string](#assi-3)
 
-[ program -4  wap to add two time in hh,mm ](#assi-4)
+[ program -4  wap to do sum of digits](#assi-4)
 
-[ program -5  wap of any 5 prog of C lang ](#assi-5)
+[ program -5  wap to find largest of three numbers](#assi-5)
 
-[ program -6  wap of class having 4 methods for 1-D Array](#assi-6)
+[ program -6  wap to make simple interest calculater ](#assi-6)
 
-[ program -7  wap of class with multiple methods to perform matrix operations](#assi-7)
+[ program -7  wap to add two distance in m,mm,cm](#assi-7)
 
-[ program -8  wap using 3  class to print 1-100 with and without thread](#assi-8)
+[ program -8  wap to add two time in hh,mm,ss](#assi-8)
 
-[ program -9  wap to synchronized all three outputs of threads using multithreading](#assi-9)
+[ program -9  wap to add two time in hh,mm ](#assi-9)
 
-[ program -10  wap to create package of any 5 classes and import it ](#assi-10)
+[ program -10  wap of any 5 prog of C lang ](#assi-10)
 
-[ program -11  wap to create package and subpackage and import and test it](#assi-11)
+[ program -11  wap of class having 4 methods for 1-D Array](#assi-11)
 
-[ program -12  wap to apply arrayoutofboundexception and arithmatic exception](#assi-12)
+[ program -12  wap of class with multiple methods to perform matrix operations](#assi-12)
 
-[ program -13  wap to test range of age using user defined exception](#assi-13)
+[ program -13  wap using 3  class to print 1-100 with and without thread](#assi-13)
 
-[ program -14  wap of inheritance using interface and abstract classes](#assi-14)
+[ program -14  wap to synchronized all three outputs of threads using multithreading](#assi-14)
 
-[ program -15  wap of addition of two no using java swing](#assi-15)
+[ program -15 wap to create package of any 5 classes and import it ](#assi-15)
 
-[ program -16  wap of calculator in swing](#assi-16)
+[ program -16  wap to create package and subpackage and import and test it](#assi-16)
 
-[ program -17  wap of matrix addition using swing class](#assi-17)
+[ program -17  wap to apply arrayoutofboundexception and arithmatic exception](#assi-17)
 
-[ program -18  wap to create jframe apply 10 buttons on that after clicking on each button a new structure is created](#assi-18)
+[ program -18  wap to test range of age using user defined exception](#assi-18)
 
-[ program -19  wap to create a jframe like paint brush with selection of color and width using only mouse](#assi-19)
+[ program -19  wap of inheritance using interface and abstract classes](#assi-19)
 
-[ program -20  wap to make registration form using 10 elements and send data into database](#assi-20)
+[ program -20  wap of addition of two no using java swing](#assi-20)
 
-[ program -21  wap of file handling(char by char)](#assi-21)
+[ program -21  wap of calculator in swing](#assi-21)
 
-[ program -22  wap of file handling (byte by byte)](#assi-22)
+[ program -22  wap of matrix addition using swing class](#assi-22)
+
+[ program -23  wap to create jframe apply 10 buttons on that after clicking on each button a new structure is created](#assi-23)
+
+[ program -24  wap to create a jframe like paint brush with selection of color and width using only mouse](#assi-24)
+
+[ program -25  wap to make registration form using 10 elements and send data into database](#assi-25)
+
+[ program -26  wap of file handling(char by char)](#assi-26)
+
+[ program -27  wap of file handling (byte by byte)](#assi-27)
 
 ## assi-1
 ```
@@ -97,8 +107,100 @@ public class calculator2 {
 ```
 <img width="743" height="175" alt="image" src="https://github.com/user-attachments/assets/f0860a82-473a-46ff-9681-3db83780024d" />
 
-
 ## assi-2
+```
+class PrimeCheck {
+    public static void main(String[] args) {
+        int n = 7;
+        boolean isPrime = true;
+
+        if (n <= 1) isPrime = false;
+
+        for (int i = 2; i <= n/2; i++) {
+            if (n % i == 0) {
+                isPrime = false;
+                break;
+            }
+        }
+
+        if (isPrime)
+            System.out.println(n + " is Prime");
+        else
+            System.out.println(n + " is Not Prime");
+    }
+}
+```
+<img width="407" height="16" alt="image" src="https://github.com/user-attachments/assets/6c1c8478-9593-45e3-a34f-c1ce014999c2" />
+
+## assi-3
+```
+class ReverseString {
+    public static void main(String[] args) {
+        String str = "Java";
+        String rev = "";
+
+        for (int i = str.length() - 1; i >= 0; i--) {
+            rev += str.charAt(i);
+        }
+
+        System.out.println("Original: " + str);
+        System.out.println("Reversed: " + rev);
+    }
+}
+```
+<img width="420" height="33" alt="image" src="https://github.com/user-attachments/assets/34b7d307-fdce-4edb-a319-d9ed834066eb" />
+
+## assi-4
+```
+class SumOfDigits {
+    public static void main(String[] args) {
+        int n = 1234, sum = 0;
+
+        while (n > 0) {
+            sum += n % 10;
+            n /= 10;
+        }
+
+        System.out.println("Sum of digits = " + sum);
+    }
+}
+```
+<img width="403" height="14" alt="image" src="https://github.com/user-attachments/assets/80a36488-da16-4e18-a60b-44e6a6548dd8" />
+
+## assi-5
+```
+class LargestNumber {
+    public static void main(String[] args) {
+        int a = 10, b = 25, c = 15;
+
+        if (a >= b && a >= c)
+            System.out.println("Largest = " + a);
+        else if (b >= a && b >= c)
+            System.out.println("Largest = " + b);
+        else
+            System.out.println("Largest = " + c);
+    }
+}
+```
+<img width="388" height="20" alt="image" src="https://github.com/user-attachments/assets/55f6c2f4-21a6-4720-adca-f7a3f30209d4" />
+
+
+## assi-6
+```
+class SimpleInterest {
+    public static void main(String[] args) {
+        int p = 1000, t = 2;
+        double r = 5.5;
+
+        double si = (p * t * r) / 100;
+
+        System.out.println("Simple Interest = " + si);
+    }
+}
+```
+<img width="406" height="19" alt="image" src="https://github.com/user-attachments/assets/f5fa12eb-8851-4663-890a-4a5133fb5d9d" />
+
+## assi-7
 ```
 import java.util.Scanner;
 
@@ -155,7 +257,7 @@ public class Distance1 {
 <img width="747" height="210" alt="image" src="https://github.com/user-attachments/assets/9eb93131-ec0e-4443-aaaa-782bfbbcdd31" />
 
 
-## assi-3
+## assi-8
 ```
 class TimeHMS {
     int h, m, s;
@@ -193,7 +295,7 @@ class TimeHMS {
 <img width="377" height="26" alt="image" src="https://github.com/user-attachments/assets/7d241270-7318-463f-911f-26c0b39dffce" />
 
 
-## assi-4
+## assi-9
 ```
 class TimeHM {
     int h, m;
@@ -228,7 +330,7 @@ class TimeHM {
 <img width="394" height="23" alt="image" src="https://github.com/user-attachments/assets/9f21ce7c-20ca-4c50-ae76-bb8790a6e569" />
 
 
-## assi-5
+## assi-10
 ```
 FACTORIAL
 class Factorial {
@@ -315,7 +417,7 @@ class Pattern {
 <img width="426" height="71" alt="image" src="https://github.com/user-attachments/assets/21eadd8e-216e-4159-8e7b-bea733314861" />
 
 
-## assi-6
+## assi-11
 ```
 class Array1D {
     int arr[] = {1, 2, 3, 4, 5};
@@ -358,7 +460,7 @@ class Array1D {
 <img width="377" height="44" alt="image" src="https://github.com/user-attachments/assets/f14e33ce-991c-4dad-8706-4097d3faea84" />
 
 
-## assi-7
+## assi-12
 ```
 class Matrix {
     int a[][] = {
@@ -429,7 +531,7 @@ class Matrix {
 ```
 <img width="398" height="283" alt="image" src="https://github.com/user-attachments/assets/99d08a5c-55d0-43eb-a96d-ecf78d6e78d6" />
 
-## assi-8
+## assi-13
 ```
 class WithoutThread {
     void print() {
@@ -470,7 +572,7 @@ class MyThread extends Thread {
 <img width="394" height="92" alt="image" src="https://github.com/user-attachments/assets/72e55d23-d78f-42d5-abae-b3648408aee2" />
 
 
-## assi-9
+## assi-14
 ```
 class JoinExample extends Thread {
     public void run() {
@@ -502,7 +604,7 @@ class JoinExample extends Thread {
 ```
 <img width="397" height="182" alt="image" src="https://github.com/user-attachments/assets/88bac8fb-2ea3-42e8-b576-c070152f5487" />
 
-## assi-10
+## assi-15
 ```
 package mypack;
 
@@ -524,7 +626,7 @@ class Test {
 <img width="405" height="20" alt="image" src="https://github.com/user-attachments/assets/ac0ac372-df04-4cb4-8d33-2823bf2149e1" />
 
 
-## assi-11
+## assi-16
 ```
 package pack1;
 
@@ -552,7 +654,7 @@ class Test {
 <img width="420" height="29" alt="image" src="https://github.com/user-attachments/assets/18c8c2bf-2d7d-47b4-875e-de1cdab7863d" />
 
 
-## assi-12
+## assi-17
 ```
 class ExceptionDemo {
     public static void main(String[] args) {
@@ -574,7 +676,7 @@ class ExceptionDemo {
 ```
 <img width="451" height="69" alt="image" src="https://github.com/user-attachments/assets/167d1c3d-9734-4bed-bc5e-02d365972825" />
 
-## assi-13
+## assi-18
 ```
 class AgeException extends Exception {
     AgeException(String msg) {
@@ -602,7 +704,7 @@ class TestAge {
 
 <img width="482" height="81" alt="image" src="https://github.com/user-attachments/assets/6f649f1b-d666-4921-af53-0ecd96c3f4dd" />
 
-## assi-14
+## assi-19
 ```
 abstract class Animal {
     abstract void sound();
@@ -634,7 +736,7 @@ class Test {
 <img width="424" height="31" alt="image" src="https://github.com/user-attachments/assets/a9c9df58-d178-4e59-a5bb-545ffd38e588" />
 
 
-## assi-15
+## assi-20
 ```
 import javax.swing.*;
 import java.awt.event.*;
@@ -681,7 +783,7 @@ public class AddSwing {
 ```
 <img width="482" height="362" alt="image" src="https://github.com/user-attachments/assets/c45d7849-d8ef-49e6-8b22-e4d4d47abfd7" />
 
-## assi-16
+## assi-21
 ```
 import javax.swing.*;
 import java.awt.event.*;
@@ -763,7 +865,7 @@ public class CalculatorSwing implements ActionListener {
 <img width="470" height="365" alt="image" src="https://github.com/user-attachments/assets/f14a8e1d-7b2d-4672-8931-bcbec35d021d" />
 
 
-## assi-17
+## assi-22
 ```
 import javax.swing.*;
 
@@ -821,7 +923,7 @@ public class MatrixAddSwing {
 ```
 <img width="615" height="350" alt="image" src="https://github.com/user-attachments/assets/9c04e683-6470-4785-83ce-5810db2b04c1" />
 
-## assi-18
+## assi-23
 ```
 import javax.swing.*;
 import java.awt.*;
@@ -878,7 +980,7 @@ public class ShapesFrame extends JFrame implements ActionListener {
 <img width="431" height="286" alt="image" src="https://github.com/user-attachments/assets/065c6ae6-399e-4fa4-8e2b-0cad42ecc8cd" />
 
 
-## assi-19
+## assi-24
 ```
 import javax.swing.*;
 import java.awt.*;
@@ -924,7 +1026,7 @@ public class PaintApp extends JFrame {
 ```
 <img width="556" height="365" alt="image" src="https://github.com/user-attachments/assets/1eccd2ec-8660-4e1c-a180-17e7d7d03618" />
 
-## assi-20
+## assi-25
 ```
 import javax.swing.*;
 import java.awt.*;
@@ -1026,7 +1128,7 @@ public class RegistrationForm extends JFrame {
 <img width="218" height="329" alt="image" src="https://github.com/user-attachments/assets/e71c2e46-a511-4509-babe-5dc33cae5c09" />
 
 
-## assi-21(CHAR BY CHAR)
+## assi-26(CHAR BY CHAR)
 ```
 import java.io.*;
 
@@ -1057,7 +1159,7 @@ input
 output
 <img width="498" height="17" alt="image" src="https://github.com/user-attachments/assets/8e30329c-69bd-4319-b23c-4328e7dd3729" />
 
-## assi-22(BYTE BY BYTE)
+## assi-27(BYTE BY BYTE)
 ```
 import java.io.*;
 
